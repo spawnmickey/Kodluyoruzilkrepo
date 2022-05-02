@@ -1,0 +1,65 @@
+// implicit conversion // bilinçsiz dönüşüm
+ byte b =64;
+ sbyte sb= 24;
+ short sh= 22;
+
+ int i = b+sb+sh;
+Console.WriteLine(i);  //bu dönüşüm yapılması için ekstra bir hamleye gerek yok çünkü int buradaki diğer değerleri kapsayabiliyor.
+
+float f = i;
+
+string s = "ilker";
+char c='i';
+object o=s+c+b;
+Console.WriteLine(o);
+
+
+
+//explicit conversion // bilinçli dönüşüm
+
+//kendi kendine yapılamayacak dönüşümleri yapmak için kullanılır. 
+
+
+
+int x = 3;
+sbyte by =1;
+by= (sbyte)x;
+Console.WriteLine(by);
+
+float ondalik= 10.532987532f;
+byte bit_sayi = (byte)ondalik;
+Console.WriteLine(bit_sayi);            //bu tür dönüşümünde sayı yuvarlanır        // çevrimlerde veri kaybı olabilir
+
+
+
+// ToString metodu
+
+int xx= 124;
+string yy=xx.ToString();
+string yazi ="onsekiz";
+
+Console.WriteLine(yy+" "+yazi);             //sayısal ifadeleri stringe çevirmek için kullanılır.
+
+String yazi1= 152.421f.ToString();
+Console.WriteLine(yazi1);
+
+
+//System.Convert sınıfı
+
+String s1= "10", s2="14";
+int sayi1,sayi2;
+
+
+sayi1= Convert.ToInt32(s1);                 //String ifadeyi int'e çevirmek için
+sayi2= Convert.ToInt32(s2);
+int islem= sayi1*sayi2;
+Console.WriteLine(islem);
+
+
+
+    //Parse metodu
+string metin1 = "1124";
+string metin2="412412";
+int rakam;
+rakam= Int32.Parse(metin1);
+Console.WriteLine(rakam);
